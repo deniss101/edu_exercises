@@ -4,7 +4,7 @@ import random
 print('Добро пожаловать в числовую угадайку', '\n')
 
 
-def is_valid(number, n):
+def is_valid(number: str, n: str) -> bool:
     '''
     Проверка введённого числа, требуется целое от 1 до введенной границы.
 
@@ -12,7 +12,7 @@ def is_valid(number, n):
     return number.isdigit() and 1 <= int(number) <= int(n)
 
 
-def rand_n():
+def rand_n() -> tuple:
     '''
     Получение и проверка границы и генерация числа для угадывания.
     
@@ -46,3 +46,4 @@ while True:
             else:
                 print('Спасибо, что играли, bye', '\n')
                 break
+

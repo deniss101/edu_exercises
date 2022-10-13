@@ -7,7 +7,7 @@ word_list = ['безопасность', 'инструмент', 'успех', '
 'брат', 'газета', 'писатель', 'роман', 'существо', 'запас', 'редактор']
 
 
-def get_word():
+def get_word() -> str:
     '''
     Загадывает случайное слово из списка слов word_list
 
@@ -15,7 +15,7 @@ def get_word():
     return choice(word_list).upper()
 
 
-def display_hangman(tries):
+def display_hangman(tries: int) -> str:
     '''
     Возвращает визуализацию оставшихся попыток.
 
@@ -24,7 +24,7 @@ def display_hangman(tries):
     return stages[tries]
 
 
-def fail_answer(tries, guessed_letters, word_completion):
+def fail_answer(tries: int, guessed_letters: list, word_completion: str):
     '''
     Отображает оставшиеся поппытки, названные буквы и сколько позиций в слове отгадано.
 
@@ -44,10 +44,12 @@ def new_game():
         play(get_word())
 
 
-def play(word):
+def play(word: str):
     '''
     Проверяет входит ли загаданная буква в слово.
     Контроль оставшихся попыток и состояния выигрыша/проигрыша.
+    Определение требуется ли вывод подсказки.
+    Отображение выигрыша/проигрыша.
 
     '''
     word_completion = '_' * len(word)
